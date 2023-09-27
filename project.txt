@@ -1,0 +1,83 @@
+   
+   
+   all instance install the mongodb
+
+1.Import the public key used by the package management system.
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+
+2.Create a list file for MongoDB.
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+3. Reload local package database.
+sudo apt-get update
+
+4. Install the MongoDB packages.
+sudo apt-get install -y mongodb-org
+
+5.sudo systemctl start mongod
+
+6.sudo systemctl status mongod
+
+
+git clone https://github.com/ugrcoban/mongoDB.git
+
+  mongosh
+  
+test> use swati
+switched to db swati
+swati> db
+swati
+swati> show dbs
+admin   40.00 KiB
+config  12.00 KiB
+local   40.00 KiB
+swati> db.createCollection("anjli")
+{ ok: 1 }
+swati> db.users.inssert("name":"swati")
+Uncaught:
+
+
+db.users.insert({name:"swati"})
+
+db.users.insert([{_id: 1,name: 'MongoDB is no sql database',tags: ['mongodb', 'database', 'NoSQL'],counter: 100},{name: "NoSQL database doesn't have tables",counter: 20, comments: [{user:'user1',message: 'My first comment',dateCreated: new Date(2013,11,10,2,35)}]}])
+
+db.users.find()
+
+ db.files.find({$and:[{"file":"selam.txt"}]} , {"file":1,_id:0} ).pretty()
+ 
+ db.users.find({ "counter": {$gt:50}, $or: [{"name": "UGUR COBAN"}, {"anyfieldname": "anytext"}] }).pretty()
+ 
+ db.users.find({})
+ 
+db.files.insertOne( { file: 'selam.txt' } )
+
+db.files.insertOne( { file: 'selam.txt', date:"2020-26-9" } )
+
+show collections
+
+db.users.find()
+
+db.users.find()
+
+db.files.find({$and:[{"file":"selam.txt"}]} , {"file":1,_id:0} ).pretty()
+
+ mkdir Backup
+ 
+ cd Backup
+ 
+mongodump
+ use swati
+
+ db.users.find().sort({name:1}).skip(1).limit(2)
+db.users.update({'name':'swati'},{$set:{'name':'COBAN UGUR'}},{multi:true})
+
+db.files.drop()
+show dbs
+
+db.dropDatabase()
+
+
+mongorestore
+show dbs
+use swati
+show collections
